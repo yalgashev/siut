@@ -6,40 +6,41 @@
     <title>Ask a Question</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
             margin: 0;
-            padding: 10px; /* Reduced padding for mobile screens */
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh; /* Ensure full vertical height */
+            min-height: 100vh; /* Full viewport height */
+            text-align: center; /* Centers the text for smaller elements */
         }
         form {
-            width: 100%; /* Make form take full width on small screens */
-            max-width: 360px; /* Limit max width for larger screens */
+            width: 100%; /* Full width for better responsiveness */
+            max-width: 360px; /* Max width for large devices */
             background: white;
-            padding: 15px;
+            padding: 20px;
+            margin-top: 10px; /* Adds space between the header and the form */
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         h1 {
             color: #333;
-            text-align: center;
-            font-size: 1.2em; /* Slightly larger heading for better readability */
+            margin-top: 20px; /* Top margin for breathing space */
+            margin-bottom: 0; /* Removes the bottom margin */
+            font-size: 24px; /* Ensures visibility on all devices */
         }
         input, textarea {
-            width: 100%; /* Full width */
-            padding: 12px; /* Larger padding for easy interaction */
-            margin-top: 8px; /* Slightly reduced margin */
-            margin-bottom: 16px; /* Adequate spacing between fields */
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            margin-bottom: 16px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            box-sizing: border-box;
-            display: block;
         }
         button {
-            width: 100%; /* Full width button for easier touch */
+            width: 100%;
             background-color: #4CAF50;
             color: white;
             padding: 12px;
@@ -59,7 +60,7 @@
     </script>
 </head>
 <body>
-    <h1>Ask a Question</h1>
+    <h1>Ask a Question</h1> <!-- Moved outside and above the form for better semantic structure -->
     <form id="questionForm">
         <input type="name" name="user_name" placeholder="Your name" required>
         <input type="email" name="user_email" placeholder="Your email address" required>
