@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask a Question</title>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("your-emailjs-user-id"); // Initialize EmailJS with your user ID
+        })();
+    </script>
+</head>
+<body>
+    <h1>Ask a Question</h1>
+    <form id="questionForm">
+        <input type="email" name="user_email" placeholder="Your email address" required>
+        <input type="tel" name="phone_number" placeholder="Your phone number">
+        <textarea name="message" placeholder="Your question" required></textarea>
+        <button type="button" onclick="sendEmail()">Submit</button>
+    </form>
+
+    <script>
+        function sendEmail() {
+            var form = document.getElementById('questionForm');
+            emailjs.sendForm('your-service-id', 'your-template-id', form)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('Your question has been sent successfully!');
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert('Failed to send the question. Please try again.');
+                });
+        }
+    </script>
+</body>
+</html>
